@@ -1,0 +1,505 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  background: rgba(38,70,83,1);
+  /* remove the extra whites around */
+  font-family: 'Roboto', sans-serif;
+}
+
+.text-header {
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+.content-full {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+}
+
+.image-all{
+  max-width: 35%;
+  height: auto;
+  margin: auto;
+}
+
+.select-profile {
+  border-radius: 30px;
+  width: 90vw;
+  margin: auto;
+}
+/* .competency-profile, .action-footer {
+  width: 100%;
+  position: fixed;
+  background: #333;
+  padding: 10px 0;
+  color: #fff;
+} */
+
+.competency-profile {
+  top: 0;
+  background-color:#2a9d8f;
+  /* height: 20vh; */
+  position: relative;
+  /* display: inline-block; */
+}
+
+.avatar-top {
+  height: 50%;
+  background-color:white;
+  position: absolute;
+  border-radius:100%;
+}
+
+.avatar-top:after {
+  content: "";
+  display: block;
+  padding-right: 100%;
+}
+
+/* .action-footer {
+  bottom: 0;
+  background-color:#2a9d8f;
+  height: 40vh;
+} */
+
+
+.rec-effect-1 {
+	transition: box-shadow 0.33s ease-in-out;
+	animation: rec-effect-1 1s infinite alternate ease-in-out;
+}
+
+@keyframes rec-effect-1 {
+	0% {
+		box-shadow: 0 0 0 0 rgba(0,255,0,.3),
+								111px 0 0 -33px rgba(0,255,0,.3),
+								-111px 0 0 -33px rgba(0,255,0,.3);
+	}
+
+	100% {
+		box-shadow: 0 0 0 11px rgba(0,255,0,.3),
+								0 0 0 0 rgba(0,255,0,.3),
+								0 0 0 0 rgba(0,255,0,.3);
+	}
+}
+
+@media only screen and (max-width: 600px) {
+  .row.valign-wrapper {
+    display: inherit;
+  }
+  .image-all{
+    max-width: 85%; !important
+    height: auto;
+  }
+}
+
+@media (min-width: 600px) {
+  .max-half {
+    width: 60%;
+  }
+  .select-profile {
+    width: 414px;
+    margin: auto;
+  }
+}
+
+/*  Process
+_______________________________________*/
+
+/** Colors **/
+ol.progress-track {
+  display: table;
+  list-style-type: none;
+  margin: 0;
+  padding: 2em 1em;
+  table-layout: fixed;
+  width: 90%;
+}
+ol.progress-track li {
+  display: table-cell;
+  /* line-height: 3em; */
+  position: relative;
+  text-align: center;
+}
+ol.progress-track li .icon-wrap {
+  border-radius: 50%;
+  top: -2.5em;
+  color: #fff;
+  display: block;
+  height: 4em;
+  margin: 0 auto -2em;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 4em;
+}
+ol.progress-track li .icon-check-mark,
+ol.progress-track li .icon-down-arrow {
+  height: 25px;
+  width: 15px;
+  display: inline-block;
+  fill: currentColor;
+}
+ol.progress-track li .progress-text {
+  position: relative;
+  top: -10px;
+}
+ol.progress-track li.progress-done {
+  border-top: 20px solid #87ba51;
+  transition: border-color 1s ease-in-out;
+  -webkit-transition: border-color 1s ease-in-out;
+  -moz-transition: border-color 1s ease-in-out;
+}
+ol.progress-track li.progress-done .icon-down-arrow {
+  display: none;
+}
+ol.progress-track li.progress-done.progress-current .icon-wrap {
+  background-color: #0070c0;
+}
+ol.progress-track li.progress-done.progress-current .icon-wrap .icon-check-mark {
+  display: none;
+}
+ol.progress-track li.progress-done.progress-current .icon-wrap .icon-down-arrow {
+  display: block;
+}
+ol.progress-track li.progress-done .icon-wrap {
+  background-color: #4a6a28;
+  border: 5px solid #87ba51;
+}
+ol.progress-track li.progress-todo {
+  border-top: 20px solid #DDD;
+  color: black;
+}
+ol.progress-track li.progress-todo .icon-wrap {
+  background-color: #FFF;
+  border: 5px solid #DDD;
+  border-radius: 50%;
+  bottom: 1.5em;
+  color: #fff;
+  display: block;
+  height: 4em;
+  margin: 0 auto -2em;
+  position: relative;
+  width: 4em;
+}
+ol.progress-track li.progress-todo .icon-wrap .icon-check-mark,
+ol.progress-track li.progress-todo .icon-wrap .icon-down-arrow {
+  display: none;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  margin-bottom: 1.2em;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0.7em solid #FC0;
+  border-left: 0.3em solid transparent;
+  /* Controlls the size of the stars. */
+  font-size: 6px;
+}
+.star:before, .star:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0.6em;
+  left: -1em;
+  border-right: 1em solid transparent;
+  border-bottom: 0.7em solid #FC0;
+  border-left: 1em solid transparent;
+  transform: rotate(-35deg);
+}
+.star:after {
+  transform: rotate(35deg);
+}
+
+
+/* dashboard */
+/*  */
+/*  card infinite shuffle */
+
+@-webkit-keyframes shuffle {
+  0% {
+    transform: rotate(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: rotate(5deg) translateX(105%) scale(0.96);
+  }
+  100% {
+    transform: rotate(0) translateX(0);
+  }
+}
+
+@keyframes shuffle {
+  0% {
+    transform: rotate(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: rotate(5deg) translateX(105%) scale(0.96);
+  }
+  100% {
+    transform: rotate(0) translateX(0);
+  }
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-height: 100%;
+  height: 350px;
+  /* margin: auto; */
+  padding-top: 10%;
+  list-style: none;
+}
+
+.card-list__item {
+  position: absolute;
+  -webkit-animation: none;
+          animation: none;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.card-list__item[data-card="0"] {
+  z-index: 6;
+  margin-top: 0;
+}
+.card-list__item[data-card="1"] {
+  z-index: 5;
+  margin-top: 4px;
+}
+.card-list__item[data-card="2"] {
+  z-index: 4;
+  margin-top: 8px;
+}
+
+.is-animated .card-list__item[data-card="0"] {
+  -webkit-animation: shuffle 1s ease-in-out 0s 1 normal;
+          animation: shuffle 1s ease-in-out 0s 1 normal;
+  z-index: 2;
+  transition: z-index 0s ease-in-out 0.5s;
+}
+.is-animated .card-list__item[data-card="1"] {
+  -webkit-animation: shuffle 1s ease-in-out 1s 1 normal;
+          animation: shuffle 1s ease-in-out 1s 1 normal;
+  z-index: 1;
+  transition: z-index 0s ease-in-out 1.5s;
+}
+.is-animated .card-list__item[data-card="2"] {
+  -webkit-animation: shuffle 1s ease-in-out 2s 1 normal;
+          animation: shuffle 1s ease-in-out 2s 1 normal;
+  z-index: 0;
+  transition: z-index 0s ease-in-out 2.5s;
+}
+
+.card-shuffle {
+  display: flex;
+  max-width: 100%;
+  width: 150px;
+  max-height: 100%;
+  height: 250px;
+  /* padding: 30px; */
+  border-radius: 15px;
+  box-shadow: 0 1px 3px 0 #222;
+  background: #555;
+}
+
+[data-card="0"] .card-shuffle {
+  background: #a37;
+}
+
+[data-card="1"] .card-shuffle {
+  background: #73a;
+}
+
+[data-card="2"] .card-shuffle {
+  background: #3a7;
+}
+
+.card-flip {
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+  width: 100%;
+  height: 100%;
+  /* margin: -150px; */
+  float: left;
+  perspective: 500px;
+  /* border-radius: 15px; */
+}
+
+.content-flip {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+}
+
+/* .card-flip:hover .content-flip {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+} */
+
+.front-flip,
+.back-flip {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  line-height: 300px;
+  color: #03446A;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 15px;
+  -webkit-perspective: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  visibility:visible;
+  backface-visibility: hidden;
+}
+
+.back-flip {
+  background: #03446A;
+  color: white;
+  transform: rotateY( 180deg );
+}
+
+/*  end of animated card shuffle*/
+
+/* show and hide action cards*/
+.modal-action-cards {
+  display: none;
+}
+.action-show {
+  display: block !important;
+}
+.modal-content-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.slide-out-left {
+	-webkit-animation: slide-out-left 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-left 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+.slide-in-right {
+	-webkit-animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2021-7-7 9:24:54
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-out-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-out-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+/**
+ * ----------------------------------------
+ * animation slide-in-right
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* end of show and hode of action cards */
+
+/* rate the cards */
+.non-active-cards{
+  transform: scale(0.8);
+  opacity: 0.3;
+}
+/* end of rate the cards */
+
+
+
+/* modal video call */
+/* ----------------------------------------------
+ * Generated by Animista on 2021-8-2 14:58:57
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+.slide-in-bottom{animation:scale-down-hor-right 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both}
+ @keyframes slide-in-bottom{0%{transform:translateY(1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
+ .slide-out-bottom{animation:scale-down-hor-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both}
+@keyframes slide-out-bottom{0%{transform:translateY(0);opacity:1}100%{transform:translateY(1000px);opacity:0}}
+
+/* jitsi */
