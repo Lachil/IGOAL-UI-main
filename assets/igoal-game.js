@@ -51,6 +51,10 @@
 
  		show_video_call();
 	document.body.style.width = "95%";
+	document.getElementById("footer").style.width = "95%";
+ document.getElementById("div3").style.width = " 15%";
+	 document.getElementById("div4").style.width = "18%";
+	 document.getElementById("div2").style.width = "90%";
 
 
 	if (document.getElementById("video-call").childNodes.length < 4){
