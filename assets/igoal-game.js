@@ -45,13 +45,12 @@
 
 
  var jitsiGoal
- var divvwith=document.getElementById("div2").style.width/3;
 
  initializeVideo = function (){
 
  		show_video_call();
-	document.body.style.width = "95%";
-	document.getElementById("footer").style.width = "95%";
+	document.body.style.width = "80%";
+	document.getElementById("footer").style.width = "80%";
  document.getElementById("div3").style.width = " 15%";
 	 document.getElementById("div4").style.width = "18%";
 	 document.getElementById("div2").style.width = "90%";
