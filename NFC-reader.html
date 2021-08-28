@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="./assets/igoal-game.css">
+<title>iGOAL-game</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta
+            name="viewport"
+            content="width=device-width, height=device-height, viewport-fit=cover, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="igoal-game.css">
+</head>
+<body>
+  <div class="app">
+
+      <div class="content-full" style="width: 100vw; height: 100vh; background-color: #264653;">
+    <div class="container">
+        <br>
+        <h3 class="center-align white-text">Web-NFC reader</h3>
+        <div class="">
+          <h5 class="center-align white-text">Live Output</h5>
+          <div class="" style="width:100%">
+            <p class="center-align"> <span class="white-text">2RoDXPsAhATqqxgME</span>::<span class="white-text">R2RoyZ8afZeZjqfRc</span></p>
+          </div>
+          <div id="output-nfc-test" class="output-nfc-test card-panel" style="height:40vh!important;">
+            <div id="content-nfc-test"></div>
+            <div id="status-nfc-test">Web NFC is not available.
+                Please make sure the "Experimental Web Platform features" flag is enabled on Android.</div>
+            <pre id="log-nfc-test"></pre>
+          </div>
+          <h4 class="center-align white-text">Keep the browser open, this device will be used as nfc scanner</h4>
+          <div class="button" >
+            <a onclick="jitsiGoal = initializeVideo()" class="waves-effect waves-light btn" style=" background-color: #4c9fc1;">Button1</a>
+            <a onclick="hide_video_call()" class="waves-effect waves-light btn" style=" background-color: #4c9fc1;">Button2</a>
+            <a onclick="terminateVideo()" class="waves-effect waves-light btn" style=" background-color: #4c9fc1;">Button3</a>
+            <a onclick="hide_video_call()" class="waves-effect waves-light btn" style=" background-color: #4c9fc1;">Button4</a>
+            <a onclick="terminateVideo()" class="waves-effect waves-light btn" style=" background-color: #4c9fc1;">Button5</a>
+          </div>
+    </div>
+      </div>
+  </div>
+  </div>
+</body>
+</html>
