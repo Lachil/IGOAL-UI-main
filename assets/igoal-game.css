@@ -24,7 +24,9 @@ html, body {
   position: fixed;
 }
 .button{
-   justify-content: center;align-items: center;
+   justify-content: center;
+   align-items: center;
+   text-align: center
 }
 .image-all{
   max-width: 35%;
