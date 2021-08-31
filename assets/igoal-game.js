@@ -47,7 +47,7 @@
  var jitsiGoal
 
  initializeVideo = function (){
-	 document.getElementById("entirewebpage").style.transform ="scaleX(0.8)";
+	 document.getElementById("entirewebpage").style.transform ="scale(0.8)";
  		show_video_call();
 	if (document.getElementById("video-call").childNodes.length < 4){
 			return video_chat();
