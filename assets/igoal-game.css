@@ -11,7 +11,9 @@ html, body {
       height :100%;
        transform-origin:left center;
   }
-
+.divImage{
+  text-align: center;
+}
   .box {
 
   	display: -webkit-flex;
