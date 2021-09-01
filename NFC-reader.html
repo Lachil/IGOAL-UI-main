@@ -4,14 +4,8 @@
 <head>
 	<link rel="stylesheet" href="./assets/igoal-game.css">
 <title>iGOAL-game</title>
-    <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta
-            name="viewport"
-            content="width=device-width, height=device-height, viewport-fit=cover, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
-    />
-    <meta name="mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -21,6 +15,7 @@
     <link rel="stylesheet" href="igoal-game.css">
 </head>
 <body>
+	<div class="w3-animate-zoom">
   <div class="app">
 
       <div class="content-full" style="width: 100vw; height: 100vh; background-color: #264653;">
@@ -39,16 +34,16 @@
             <pre id="log-nfc-test"></pre>
           </div>
           <h4 class="center-align white-text"></h4>
-          <div class="buttonNFC" >
-            <a onclick="" class="waves-effect waves-light btn" style=" background-color: #2f6074;">NFC1</a>
-            <a onclick="" class="waves-effect waves-light btn" style=" background-color: #2f6074;">NFC2</a>
-            <a onclick="" class="waves-effect waves-light btn" style=" background-color: #2f6074;">NFC3</a>
-            <a onclick="" class="waves-effect waves-light btn" style=" background-color: #2f6074;">NFC4</a>
-            <a onclick="" class="waves-effect waves-light btn" style=" background-color: #2f6074;">NFC5</a>
-          </div>
+					<div class="box bg-2" >
+						<button class="button1 button--nuka button--round-l button--inverted button--text-thick button--text-upper button--size-s"><img src="./assets/images/nfc.png">  NFC 1</button>
+							<button class="button1 button--nuka button--round-l button--inverted button--text-thick button--text-upper button--size-s"><img src="./assets/images/nfc.png">  NFC 2</button>
+								<button class="button1 button--nuka button--round-l button--inverted button--text-thick button--text-upper button--size-s"><img src="./assets/images/nfc.png">  NFC3</button>
+									<button class="button1 button--nuka button--round-l button--inverted button--text-thick button--text-upper button--size-s"><img src="./assets/images/nfc.png">  NFC2</button>
+					</div>
     </div>
       </div>
   </div>
   </div>
+	</div>
 </body>
 </html>
