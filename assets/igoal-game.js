@@ -54,10 +54,6 @@
 	}
  }
 
- function alertFunc() {
-	 alert("Hello!");
- }
- document.getElementById("demo").innerHTML = alertFunc();
  terminateVideo = function (){
  	if (document.getElementById("video-call").childNodes.length > 3){
  		jitsiGoal.executeCommand('hangup');
