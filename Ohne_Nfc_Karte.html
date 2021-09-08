@@ -1,49 +1,453 @@
 
+
 <!DOCTYPE html>
-<html>
+<html lang="en" >
+
 <head>
-	<link rel="stylesheet" href="./assets/igoal-game.css">
-<title>iGOAL-game</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="igoal-game.css">
+  <meta charset="UTF-8">
+<link rel="stylesheet" href="./assets/igoal-game.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <script></script>
+     <!-- Compiled and minified JavaScript -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<style>
+:root {
+	/* SIZES */
+	--max-width: 758px;
+	--max-height: 420px;
+
+	font-size: 16px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+
+
+.container {
+	background-color: container;
+	border-radius: var(--button-radius);
+	box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+		0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+	height: var(--max-height);
+	max-width: var(--max-width);
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.container__form {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	transition: all 0.6s ease-in-out;
+}
+
+.container--signin {
+	left: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+.container.right-panel-active .container--signin {
+	transform: translateX(100%);
+}
+
+.container--signup {
+	left: 0;
+	opacity: 0;
+	width: 50%;
+	z-index: 1;
+}
+
+.container.right-panel-active .container--signup {
+	-webkit-animation: show 0.6s;
+	        animation: show 0.6s;
+	opacity: 1;
+	transform: translateX(100%);
+	z-index: 5;
+}
+
+.container__overlay {
+	height: 100%;
+	left: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	transition: transform 0.6s ease-in-out;
+	width: 50%;
+	z-index: 100;
+}
+
+.container.right-panel-active .container__overlay {
+	transform: translateX(-100%);
+}
+
+html {
+
+    box-sizing: border-box;
+    --bgColorMenu : #1d1d27;
+    --duration: .7s;
+
+}
+
+html *,
+html *::before,
+html *::after {
+
+    box-sizing: inherit;
+
+}
+
+body{
+
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background-color: #264653;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color var(--duration);
+
+}
+
+.menu{
+
+
+    display: flex;
+    /* Works well with 100% width  */
+    width: 140%;
+    font-size: 1.5em;
+    padding: 0 2.85em;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgColorMenu);
+
+}
+
+.menu__item{
+
+    all: unset;
+    flex-grow: 1;
+    z-index: 100;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    align-items: center;
+    will-change: transform;
+    justify-content: center;
+    padding: 0.55em 0 0.85em;
+    transition: transform var(--timeOut , var(--duration));
+
+}
+
+.menu__item::before{
+
+    content: "";
+    z-index: -1;
+    width: 4.2em;
+    height: 4.2em;
+    border-radius: 50%;
+    position: absolute;
+    transform: scale(0);
+    transition: background-color var(--duration), transform var(--duration);
+
+}
+
+
+.menu__item.active {
+
+    transform: translate3d(0, -.8em , 0);
+
+}
+
+.menu__item.active::before{
+
+    transform: scale(1);
+    background-color: var(--bgColorItem);
+
+}
+
+.icon{
+
+    width: 2.6em;
+    height: 2.6em;
+    stroke: white;
+    fill: transparent;
+    stroke-width: 1pt;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 400;
+
+}
+
+.menu__item.active .icon {
+
+    animation: strok 1.5s reverse;
+
+}
+
+@keyframes strok {
+
+    100% {
+
+        stroke-dashoffset: 400;
+
+    }
+
+}
+
+.menu__border{
+
+    left: 0;
+    bottom: 99%;
+    width: 10.9em;
+    height: 2.4em;
+    position: absolute;
+    clip-path: url(#menu);
+    will-change: transform;
+    background-color: var(--bgColorMenu);
+    transition: transform var(--timeOut , var(--duration));
+
+}
+
+.svg-container {
+
+    width: 0;
+    height: 0;
+}
+
+
+@media screen and (max-width: 50em) {
+    .menu{
+        font-size: .8em;
+    }
+}
+
+div#app .wrapper {
+  display: flex;
+  max-width: 544px;
+  flex-wrap: wrap;
+  padding-top: 0px;
+}
+div#app .card {
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  max-width: 124px;
+  margin: 12px;
+  transition: 0.15s all ease-in-out;
+	width: 76px;
+	height: 140px;
+	display: flex;
+  
+
+}
+div#app .card:hover {
+  transform: scale(1.1);
+}
+
+
+
+div#app .box {
+  width: 200px;
+  height: 140px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+</style>
+
+
+<script>
+window.console = window.console || function(t) {};
+</script>
+
+
+
+<script>
+if (document.location.search.match(/type=embed/gi)) {
+	window.parent.postMessage("resize", "*");
+}
+
+</script>
+
+
 </head>
-<body>
-		<div class="w3-animate-zoom">
-  <div class="app">
-      <div class="content-full" style="width: 100vw; height: 100vh; background-color: #264653;">
-    <div class="container">
-        <br>
-        <h3 class="center-align white-text">NFC_Karte auswälen</h3>
-        <div class="">
-          <h5 class="center-align white-text">Live Output</h5>
-          <div class="" style="width:100%">
-            <p class="center-align"> <span class="white-text">2RoDXPsAhATqqxgME</span>::<span class="white-text">R2RoyZ8afZeZjqfRc</span></p>
-          </div>
-          	<div class="w3-panel w3-white w3-round-xlarge" style="height:40vh!important;">
-            <div id="content-nfc-test"></div>
-            <div id="status-nfc-test">Web NFC is not available.
-                Please make sure the "Experimental Web Platform features" flag is enabled on Android.</div>
 
-          </div>
-          <h4 class="center-align white-text"></h4>
-						<div class="box bg-2" >
-				         <button onclick=""  class="button1 button--nuka button--round-l button--inverted button--text-thick button--text-upper button--size-s-o">Karte 1<img src="./assets/images/coach.png"> </button>
-				      <button onclick=""  class="button1 button--nuka button--round-l button--inverted button--text-thick button--text-upper button--size-s-o">Karte 2 <img src="./assets/images/coach.png"> </button>
-							   <button onclick=""  class="button1 button--nuka button--round-l button--inverted button--text-thick button--text-upper button--size-s-o">Karte 3 <img src="./assets/images/coach.png"> </button>
-								    <button onclick=""  class="button1 button--nuka button--round-l button--inverted button--text-thick button--text-upper button--size-s-o">Karte 4 <img src="./assets/images/coach.png"> </button>
-										   <button onclick=""  class="button1 button--nuka button--round-l button--inverted button--text-thick button--text-upper button--size-s-o">Karte 5 <img src="./assets/images/coach.png"> </button>
-				    </div>
-    </div>
-      </div>
-  </div>
-  </div>
+<body translate="no" >
+  <div class="">
+   
+    <h4 class="center-align white-text">Web-NFC reader</h4> 
+		<div id="app"style=" position: relative;margin-top:35%">
+
+<div class="wrapper" >
+	<div class="card" v-for="post in filteredList">
+
+			<img v-bind:src="post.img" style="width: 40%;height: 40%; position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+
 	</div>
+</div>
+
+</div>
+
+
+
+      
+
+
+	<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.9/vue.min.js'></script>
+<menu class="menu" style="margin-top: 500px;left: -20%;">
+  <button class="menu__item" onclick="fensterOeffnen()"   style="--bgColorItem: #4343f5;background-color :#1d1d27;" >
+<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="12" x2="12" y2="12.01" /><path d="M14.828 9.172a4 4 0 0 1 0 5.656" /><path d="M17.657 6.343a8 8 0 0 1 0 11.314" /><path d="M9.168 14.828a4 4 0 0 1 0 -5.656" /><path d="M6.337 17.657a8 8 0 0 1 0 -11.314" /></svg>
+  </button>
+
+    <button class="menu__item active"    style="--bgColorItem: #ff8c00;background-color :#1d1d27;" >
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="3" y1="3" x2="21" y2="21" /><path d="M14.828 9.172a4 4 0 0 1 1.172 2.828" /><path d="M17.657 6.343a8 8 0 0 1 1.635 8.952" /><path d="M9.168 14.828a4 4 0 0 1 0 -5.656" /><path d="M6.337 17.657a8 8 0 0 1 0 -11.314" /></svg>
+
+    </button>
+
+
+
+<div class="menu__border"></div>
+    <div class="svg-container">
+      <svg viewBox="0 0 202.9 45.5" >
+        <clipPath id="menu" clipPathUnits="objectBoundingBox" transform="scale(0.0049285362247413 0.021978021978022)">
+          <path  d="M6.7,45.5c5.7,0.1,14.1-0.4,23.3-4c5.7-2.3,9.9-5,18.1-10.5c10.7-7.1,11.8-9.2,20.6-14.3c5-2.9,9.2-5.2,15.2-7
+            c7.1-2.1,13.3-2.3,17.6-2.1c4.2-0.2,10.5,0.1,17.6,2.1c6.1,1.8,10.2,4.1,15.2,7c8.8,5,9.9,7.1,20.6,14.3c8.3,5.5,12.4,8.2,18.1,10.5
+            c9.2,3.6,17.6,4.2,23.3,4H6.7z"/>
+        </clipPath>
+      </svg>
+    </div>
+
+
+
+
+  </menu>
+
+		<script id="rendered-js" >
+class Post {
+constructor(title, img) {
+	this.title = title;
+	this.img = img;
+}}
+
+
+const app = new Vue({
+el: '#app',
+data: {
+	search: '',
+	postList: [
+	new Post(
+	'Nfc Card 1',
+	'./assets/images/nfc_card.png'),
+
+	new Post(
+	'Nfc Card 4',
+	'./assets/images/nfc_card.png'),
+
+
+
+	new Post(
+	'Nfc Card 3',
+		'./assets/images/nfc_card.png'),
+	new Post(
+		'Nfc Card 5',
+			'./assets/images/nfc_card.png'),
+
+	new Post(
+	'Nfc Card 2',
+		'./assets/images/nfc_card.png')] },
+
+
+
+computed: {
+	filteredList() {
+		return this.postList.filter(post => {
+			return post.title.toLowerCase().includes(this.search.toLowerCase());
+		});
+	} } });
+//# sourceURL=pen.js
+	</script>
+
+
+
+
+
+        <script id="rendered-js" >
+
+
+"use strict";
+
+const body = document.body;
+const bgColorsBody = ["#264653;"];
+const menu = body.querySelector(".menu");
+const menuItems = menu.querySelectorAll(".menu__item");
+const menuBorder = menu.querySelector(".menu__border");
+let activeItem = menu.querySelector(".active");
+
+function clickItem(item, index) {
+
+  menu.style.removeProperty("--timeOut");
+
+  if (activeItem == item) return;
+
+  if (activeItem) {
+    activeItem.classList.remove("active");
+  }
+
+
+  item.classList.add("active");
+  body.style.backgroundColor = bgColorsBody[index];
+  activeItem = item;
+  offsetMenuBorder(activeItem, menuBorder);
+  //  window.location.href ="Mit_NFC-reader.html":
+
+
+}
+function fensterOeffnen() {
+window.location.href='NFC-reader.html';
+}
+
+function offsetMenuBorder(element, menuBorder) {
+
+  const offsetActiveItem = element.getBoundingClientRect();
+  const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth - offsetActiveItem.width) / 2) + "px";
+  menuBorder.style.transform = `translate3d(${left}, 0 , 0)`;
+
+}
+
+offsetMenuBorder(activeItem, menuBorder);
+
+menuItems.forEach((item, index) => {
+
+  item.addEventListener("click", () => clickItem(item, index));
+
+});
+
+window.addEventListener("resize", () => {
+  offsetMenuBorder(activeItem, menuBorder);
+  menu.style.setProperty("--timeOut", "none");
+});
+//# sourceURL=pen.js
+    </script>
+    
 </body>
+
 </html>
