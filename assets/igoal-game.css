@@ -945,7 +945,7 @@ html, body {
     display: inherit;
   }
   .image-all{
-    max-width: 85%; !important
+    max-width: 85%; 
     height: auto;
   }
 }
