@@ -63,6 +63,7 @@
 		alert("no video call to close")
 	}
  }
+ 
 
  shuffle_card_deck = function (){
   document.getElementById("dashboard-modal-content").classList.remove("action-show")

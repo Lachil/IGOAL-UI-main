@@ -85,7 +85,7 @@ body{
 .menu__item.active {
 
     transform: translate3d(0, -.8em , 0);
-
+    --bgColorItem: #e9c46a;background-color :#2a9d8f;
 }
 
 .menu__item.active::before{
