@@ -743,8 +743,8 @@ Beziercurve.prototype.getLength = function () {
 var BoardPassGenerator = function (steps, coordinates) {
 
   var self = this;
-  this.numberSteps = 10;
-  this.currentcount=10;
+  this.numberSteps = 6;
+  this.currentcount=5;
   this.snap = Snap("#generated-steps");
   this.sellingCount = 2;
   this.steps = steps;
@@ -876,9 +876,7 @@ window.onload = function () {
     buttonEvent(true, this);
   });
 
- // lessButton.addEventListener('click', function () {
-   // buttonEvent(false, this);
-  //});
+
 
   boardPassGenerator.init();
 
